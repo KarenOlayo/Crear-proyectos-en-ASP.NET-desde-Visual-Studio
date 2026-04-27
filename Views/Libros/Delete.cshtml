@@ -1,0 +1,41 @@
+﻿@model SistemaBiblioteca.Models.Libro
+
+@{
+    ViewData["Title"] = "Eliminar Libro";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow-sm border-danger">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0">🗑️ Eliminar Libro</h4>
+            </div>
+            <div class="card-body">
+                <p class="text-muted mb-4">¿Estás seguro de que deseas eliminar este libro? Esta acción no se puede deshacer.</p>
+
+                <ul class="list-group list-group-flush mb-4">
+                    <li class="list-group-item">
+                        <span class="fw-semibold">Título:</span> @Model.Titulo
+                    </li>
+                    <li class="list-group-item">
+                        <span class="fw-semibold">ISBN:</span> <code>@Model.ISBN</code>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="fw-semibold">Autor:</span> @Model.Autor
+                    </li>
+                    <li class="list-group-item">
+                        <span class="fw-semibold">Estado:</span> @Model.Estado
+                    </li>
+                </ul>
+
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="Index" class="btn btn-outline-secondary">← Cancelar</a>
+                        <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

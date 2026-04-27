@@ -1,0 +1,46 @@
+﻿@model SistemaBiblioteca.Models.Libro
+
+@{
+    ViewData["Title"] = "Nuevo Libro";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">➕ Nuevo Libro</h4>
+            </div>
+            <div class="card-body">
+                <form asp-action="Create">
+                    <div class="mb-3">
+                        <label asp-for="Titulo" class="form-label fw-semibold">Título</label>
+                        <input asp-for="Titulo" class="form-control" placeholder="Ej: Cien años de soledad" />
+                        <span asp-validation-for="Titulo" class="text-danger small"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="ISBN" class="form-label fw-semibold">ISBN</label>
+                        <input asp-for="ISBN" class="form-control" placeholder="Ej: 978-3-16-148410-0" />
+                        <span asp-validation-for="ISBN" class="text-danger small"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Autor" class="form-label fw-semibold">Autor</label>
+                        <input asp-for="Autor" class="form-control" placeholder="Ej: Gabriel García Márquez" />
+                        <span asp-validation-for="Autor" class="text-danger small"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Area" class="form-label fw-semibold">Área</label>
+                        <input asp-for="Area" class="form-control" placeholder="Ej: Literatura" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Genero" class="form-label fw-semibold">Género</label>
+                        <input asp-for="Genero" class="form-control" placeholder="Ej: Realismo mágico" />
+                    </div>
+                    <div class="d-flex justify-content-between mt-4">
+                        <a asp-action="Index" class="btn btn-outline-secondary">← Cancelar</a>
+                        <button type="submit" class="btn btn-dark">Guardar libro</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
